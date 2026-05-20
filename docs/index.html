@@ -702,7 +702,7 @@
         pl:[
             {title:"Optymalizacja PC", desc:"Modyfikuje ukryte ustawienia systemowe, aby wycisnąć maksymalną wydajność sprzętu w grach i aplikacjach.", list:["Wyłączenie throttling-u CPU","Czyszczenie pamięci RAM w czasie rzeczywistym","Optymalizacja planów zasilania pod kątem niskich opóźnień","Deaktywacja zbędnych usług systemowych (Telemetria)"]},
             {title:"Optymalizacja Internetu", desc:"Konfiguruje parametry sieciowe dla uzyskania minimalnego pingu oraz maksymalnej stabilności połączenia.", list:["Optymalizacja parametrów TCP/IP","Automatyczny dobór najszybszych serwerów DNS","Zmniejszenie opóźnień sieciowych (odpytywanie Nagle)","Czyszczenie pamięci podręcznej DNS i reset protokołów"]},
-            {title:"Czyszczenie systemu", desc:"Pozbywa się gigabajtów zalegających śmieci spowalniających działanie dysków.", list:["Usuwanie plików tymczasowych (Temp)","Czyszczenie logów systemowych i raportów błędów","Oczyszczanie pamięci podręcznej przeglądarek i instalatorów Windows","Optymalizacja struktury rejestru systemowego"]}
+            {title:"Czyszczenie systemu", desc:"Pozbywa się gigabajtów zalegających śmieci spowalniających działanie dysków.", list:["Usuwanie plików tymczasowych (Temp)","Czyszczenie logów systemowych i raportów błędów","Oczyszczanie pamięci podatnej przeglądarek i instalatorów Windows","Optymalizacja struktury rejestru systemowego"]}
         ],
         en:[
             {title:"PC Optimization", desc:"Modifies hidden system configurations to extract maximum hardware performance for gaming.", list:["Disabling CPU throttling","Real-time RAM memory purging","Optimizing energy profiles for minimal system latency","Deactivating unneeded telemetry and background agents"]},
@@ -741,23 +741,18 @@
 
     /* GOOGLE AUTH IMPLEMENTATION */
     function loginWithGoogle() {
+        const errorDiv = document.getElementById('login-error');
         if(!isFirebaseConfigured) {
-            alert("Baza danych nie jest podłączona! Podłącz projekt Firebase w kodzie pliku, aby zalogować się przez Google.");
-            // Logowanie demo
-            currentUser = "Gracz Google (Demo)";
-            userEmail = "demo-user@gmail.com";
-            userAvatar = "";
-            updateUserProfile();
-            closeAuthModal();
-            loadReviews();
+            errorDiv.innerText = "Błąd: Logowanie Google wymaga aktywnego Firebase! Wklej poprawne dane do 'firebaseConfig' na górze skryptu.";
+            errorDiv.style.display = 'block';
             return;
         }
         const provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider).then((result) => {
             closeAuthModal();
         }).catch((error) => {
-            document.getElementById('login-error').innerText = error.message;
-            document.getElementById('login-error').style.display = 'block';
+            errorDiv.innerText = error.message;
+            errorDiv.style.display = 'block';
         });
     }
 
@@ -858,23 +853,26 @@
         }
 
         let repliesHtml = '';
-        if(review.replies && review.replies.length > 0){
-            repliesHtml = `
-                <div class="replies-section">
-                    ${review.replies.map(rep => `
-                        <div class="reply-card">
-                            <img src="${rep.avatar}" class="reply-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23ff006e%22%3E%3Cpath d=%22M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z%22/%3E%3C/svg%3E'">
-                            <div class="reply-content">
-                                <div class="reply-header">
-                                    <span class="reply-author">${rep.author}</span>
-                                    <span class="reply-date">${rep.date || ''}</span>
+        if(review.replies){
+            let repliesArr = Array.isArray(review.replies) ? review.replies : Object.keys(review.replies).map(k => review.replies[k]);
+            if(repliesArr.length > 0) {
+                repliesHtml = `
+                    <div class="replies-section">
+                        ${repliesArr.map(rep => `
+                            <div class="reply-card">
+                                <img src="${rep.avatar}" class="reply-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23ff006e%22%3E%3Cpath d=%22M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z%22/%3E%3C/svg%3E'">
+                                <div class="reply-content">
+                                    <div class="reply-header">
+                                        <span class="reply-author">${rep.author}</span>
+                                        <span class="reply-date">${rep.date || ''}</span>
+                                    </div>
+                                    <div class="reply-text">${rep.text}</div>
                                 </div>
-                                <div class="reply-text">${rep.text}</div>
                             </div>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
+                        `).join('')}
+                    </div>
+                `;
+            }
         }
 
         const defaultAvatar = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%2300f0ff%22%3E%3Cpath d=%22M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z%22/%3E%3C/svg%3E';
@@ -903,17 +901,29 @@
         e.preventDefault();
         const email=document.getElementById('login-email').value;
         const password=document.getElementById('login-password').value;
+        const errorDiv=document.getElementById('login-error');
         
         if(isFirebaseConfigured) {
-            firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-                closeAuthModal();
-            }).catch(err => {
-                document.getElementById('login-error').innerText = err.message;
-                document.getElementById('login-error').style.display = 'block';
+            firebase.auth().signInWithEmailAndPassword(email, password).catch(err => {
+                errorDiv.innerText = "Błąd logowania Firebase: " + err.message;
+                errorDiv.style.display = 'block';
             });
         } else {
-            currentUser = email.split('@')[0]; userEmail = email; userAvatar = '';
-            updateUserProfile(); closeAuthModal(); loadReviews();
+            // Bezpieczny tryb lokalny: sprawdzenie w localStorage czy konto istnieje i czy hasło pasuje
+            let localUsers = JSON.parse(localStorage.getItem('local_users') || '[]');
+            let matchedUser = localUsers.find(u => u.email === email);
+            
+            if (matchedUser && matchedUser.password === password) {
+                currentUser = matchedUser.username; 
+                userEmail = matchedUser.email; 
+                userAvatar = matchedUser.avatar;
+                updateUserProfile(); 
+                closeAuthModal(); 
+                loadReviews();
+            } else {
+                errorDiv.innerText = "Niepoprawny e-mail lub hasło! (W trybie demo musisz najpierw kliknąć 'Zarejestruj się', aby utworzyć konto).";
+                errorDiv.style.display = 'block';
+            }
         }
     }
 
@@ -931,12 +941,21 @@
         if(isFirebaseConfigured) {
             firebase.auth().createUserWithEmailAndPassword(email, password).then((result) => {
                 result.user.updateProfile({ displayName: username, photoURL: avatar }).then(() => {
-                    // Wymuszenie odświeżenia profilu
                     currentUser = username; userEmail = email; userAvatar = avatar;
                     updateUserProfile(); closeAuthModal();
                 });
             }).catch(err => { errorDiv.innerText = err.message; errorDiv.style.display = 'block'; });
         } else {
+            // Lokalne rejestrowanie do testów offline
+            let localUsers = JSON.parse(localStorage.getItem('local_users') || '[]');
+            if(localUsers.some(u => u.email === email)){
+                errorDiv.innerText = 'Konto o tym adresie e-mail już istnieje w systemie lokalnym!';
+                errorDiv.style.display = 'block';
+                return;
+            }
+            localUsers.push({ username: username, email: email, avatar: avatar, password: password });
+            localStorage.setItem('local_users', JSON.stringify(localUsers));
+            
             currentUser = username; userEmail = email; userAvatar = avatar;
             updateUserProfile(); closeAuthModal(); loadReviews();
         }
@@ -978,8 +997,7 @@
             rating: rating,
             text: text,
             date: new Date().toLocaleDateString('pl-PL', {year:'numeric', month:'long', day:'numeric'}),
-            dateRaw: new Date().toISOString(),
-            replies: []
+            dateRaw: new Date().toISOString()
         };
 
         if(isFirebaseConfigured) {
@@ -1014,23 +1032,21 @@
         const text = document.getElementById(`reply-text-${reviewId}`).value;
         if(!text.trim()) return;
 
+        let replyObj = {
+            author: 'Clearnix Creator',
+            avatar: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff006e"%3E%3Cpath d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/%3E%3C/svg%3E',
+            text: text,
+            date: new Date().toLocaleDateString('pl-PL', {year:'numeric', month:'long', day:'numeric'})
+        };
+
         if(isFirebaseConfigured) {
-            firebase.database().ref(`reviews/${reviewId}/replies`).push({
-                author: 'Clearnix Creator',
-                avatar: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff006e"%3E%3Cpath d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/%3E%3C/svg%3E',
-                text: text,
-                date: new Date().toLocaleDateString('pl-PL', {year:'numeric', month:'long', day:'numeric'})
-            });
+            firebase.database().ref(`reviews/${reviewId}/replies`).push(replyObj);
         } else {
             let reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
             const review = reviews.find(r => r.id === reviewId);
             if(review){
                 if(!review.replies) review.replies = [];
-                review.replies.push({
-                    author: 'Clearnix Creator',
-                    text: text,
-                    date: new Date().toLocaleDateString('pl-PL', {year:'numeric', month:'long', day:'numeric'})
-                });
+                review.replies.push(replyObj);
                 localStorage.setItem('reviews', JSON.stringify(reviews));
             }
             loadReviews();
@@ -1062,7 +1078,6 @@
         document.getElementById('download-status').innerText = 'Inicjalizacja pobierania...';
         setTimeout(()=>{
             document.getElementById('download-status').innerText = 'Pobieranie rozpoczęte!';
-            // TUTAJ wklej swój link z sekcji GitHub Releases:
             window.location.href = 'https://clearnixapp.github.io/clearnix/Clearnix-Setup.exe';
         }, 1200);
     }
