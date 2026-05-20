@@ -79,71 +79,15 @@
         mix-blend-mode:screen;
     }
 
-    .orb-purple{
-        width:500px;
-        height:500px;
-        background:radial-gradient(circle, #7c3aed, transparent);
-        top:-150px;
-        left:-100px;
-        animation:orb-move-1 25s ease-in-out infinite;
-    }
+    .orb-purple{ width:500px; height:500px; background:radial-gradient(circle, #7c3aed, transparent); top:-150px; left:-100px; animation:orb-move-1 25s ease-in-out infinite; }
+    .orb-pink{ width:450px; height:450px; background:radial-gradient(circle, #ff006e, transparent); bottom:-150px; right:-100px; animation:orb-move-2 30s ease-in-out infinite; }
+    .orb-cyan{ width:480px; height:480px; background:radial-gradient(circle, #00f0ff, transparent); top:25%; right:-150px; animation:orb-move-3 27s ease-in-out infinite; }
+    .orb-violet{ width:400px; height:400px; background:radial-gradient(circle, #9d4edd, transparent); bottom:10%; left:5%; animation:orb-move-4 28s ease-in-out infinite; }
 
-    .orb-pink{
-        width:450px;
-        height:450px;
-        background:radial-gradient(circle, #ff006e, transparent);
-        bottom:-150px;
-        right:-100px;
-        animation:orb-move-2 30s ease-in-out infinite;
-    }
-
-    .orb-cyan{
-        width:480px;
-        height:480px;
-        background:radial-gradient(circle, #00f0ff, transparent);
-        top:25%;
-        right:-150px;
-        animation:orb-move-3 27s ease-in-out infinite;
-    }
-
-    .orb-violet{
-        width:400px;
-        height:400px;
-        background:radial-gradient(circle, #9d4edd, transparent);
-        bottom:10%;
-        left:5%;
-        animation:orb-move-4 28s ease-in-out infinite;
-    }
-
-    @keyframes orb-move-1{
-        0%, 100%{transform:translate(0px, 0px) scale(1);}
-        50%{transform:translate(80px, 120px) scale(1.15);}
-    }
-    @keyframes orb-move-2{
-        0%, 100%{transform:translate(0px, 0px) scale(1);}
-        50%{transform:translate(-100px, -80px) scale(1.1);}
-    }
-    @keyframes orb-move-3{
-        0%, 100%{transform:translate(0px, 0px) scale(1);}
-        50%{transform:translate(-120px, 60px) scale(1.05);}
-    }
-    @keyframes orb-move-4{
-        0%, 100%{transform:translate(0px, 0px) scale(1);}
-        50%{transform:translate(90px, -100px) scale(1.2);}
-    }
-
-    .star{
-        position:absolute;
-        background:white;
-        border-radius:50%;
-        animation:twinkle 4s infinite;
-        pointer-events: none;
-    }
-
-    @keyframes twinkle{
-        0%, 100%{opacity:0.2;}
-        50%{opacity:0.8;}
-    }
+    @keyframes orb-move-1{ 0%, 100%{transform:translate(0px, 0px) scale(1);} 50%{transform:translate(80px, 120px) scale(1.15);} }
+    @keyframes orb-move-2{ 0%, 100%{transform:translate(0px, 0px) scale(1);} 50%{transform:translate(-100px, -80px) scale(1.1);} }
+    @keyframes orb-move-3{ 0%, 100%{transform:translate(0px, 0px) scale(1);} 50%{transform:translate(-120px, 60px) scale(1.05);} }
+    @keyframes orb-move-4{ 0%, 100%{transform:translate(0px, 0px) scale(1);} 50%{transform:translate(90px, -100px) scale(1.2);} }
 
     /* HUD STICKY NAVBAR */
     .nav{
@@ -177,7 +121,7 @@
     .nav-right{
         display:flex;
         align-items:center;
-        gap:35px;
+        gap:30px;
     }
 
     .nav-right a{
@@ -209,9 +153,7 @@
         transition:width 0.3s ease;
     }
 
-    .nav-right a:hover::after{
-        width:100%;
-    }
+    .nav-right a:hover::after{ width:100%; }
 
     .lang select{
         background: #0b0b1e;
@@ -224,23 +166,13 @@
         font-family: 'Orbitron', sans-serif;
         font-weight:700;
         font-size: 13px;
-        box-shadow: 0 0 5px rgba(0, 240, 255, 0.2);
     }
 
-    .lang select:hover{
-        background: #00f0ff;
-        color: #020208;
-        box-shadow: 0 0 15px #00f0ff;
-    }
+    .lang select:hover{ background: #00f0ff; color: #020208; box-shadow: 0 0 15px #00f0ff; }
 
     /* PAGES */
-    .page{
-        display:none;
-    }
-
-    .page.active{
-        display:block;
-    }
+    .page{ display:none; }
+    .page.active{ display:block; }
 
     /* GAMING HERO SECTION */
     .hero{
@@ -253,25 +185,6 @@
         padding-top:100px;
     }
 
-    .hero::before{
-        content:'';
-        position:absolute;
-        top:50%;
-        left:50%;
-        transform:translate(-50%, -50%);
-        width:600px;
-        height:600px;
-        background:radial-gradient(circle, rgba(0, 240, 255, 0.12), transparent);
-        filter:blur(60px);
-        animation:pulse-big 5s ease-in-out infinite;
-        pointer-events:none;
-    }
-
-    @keyframes pulse-big{
-        0%,100%{transform:translate(-50%, -50%) scale(1);}
-        50%{transform:translate(-50%, -50%) scale(1.25);}
-    }
-
     .hero-content{
         z-index:5;
         max-width:900px;
@@ -279,10 +192,7 @@
         animation:slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
 
-    @keyframes slide-up{
-        from{ opacity:0; transform:translateY(40px); }
-        to{ opacity:1; transform:translateY(0); }
-    }
+    @keyframes slide-up{ from{ opacity:0; transform:translateY(40px); } to{ opacity:1; transform:translateY(0); } }
 
     .hero h1{
         font-family: 'Orbitron', sans-serif;
@@ -296,20 +206,12 @@
         -webkit-text-fill-color:transparent;
         background-clip:text;
         letter-spacing:-1px;
-        filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.2));
     }
 
-    .hero p{
-        margin-top:20px;
-        color:#94a3b8;
-        font-size:24px;
-        font-weight:600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
+    .hero p{ color:#94a3b8; font-size:24px; font-weight:600; text-transform: uppercase; letter-spacing: 1px; }
 
     /* CYBER BUTTONS */
-    .download-btn, .back-btn, .review-btn, .delete-btn, .reply-btn, .auth-btn, .submit-btn{
+    .download-btn, .back-btn, .review-btn, .delete-btn, .reply-btn, .auth-btn, .submit-btn, .google-btn{
         margin-top:40px;
         padding:18px 45px;
         border-radius: 4px;
@@ -328,609 +230,154 @@
         box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
     }
 
-    .download-btn::before, .back-btn::before, .review-btn::before, .delete-btn::before, .reply-btn::before, .auth-btn::before, .submit-btn::before{
-        content:'';
-        position:absolute;
-        top:0;
-        left:-100%;
-        width:100%;
-        height:100%;
-        background: linear-gradient(90deg, #00f0ff, #ff006e);
-        transition:left 0.35s ease;
-        z-index:-1;
+    .download-btn::before, .back-btn::before, .review-btn::before, .delete-btn::before, .reply-btn::before, .auth-btn::before, .submit-btn::before, .google-btn::before{
+        content:''; position:absolute; top:0; left:-100%; width:100%; height:100%;
+        background: linear-gradient(90deg, #00f0ff, #ff006e); transition:left 0.35s ease; z-index:-1;
     }
 
-    .download-btn:hover::before, .back-btn:hover::before, .review-btn:hover::before, .delete-btn:hover::before, .reply-btn:hover::before, .auth-btn:hover::before, .submit-btn:hover::before{
-        left:0;
+    .download-btn:hover::before, .back-btn:hover::before, .review-btn:hover::before, .delete-btn:hover::before, .reply-btn:hover::before, .auth-btn:hover::before, .submit-btn:hover::before, .google-btn:hover::before{ left:0; }
+    .download-btn:hover, .back-btn:hover, .review-btn:hover, .delete-btn:hover, .reply-btn:hover, .auth-btn:hover, .submit-btn:hover, .google-btn:hover{
+        border-color:#ff006e; color: #ffffff; box-shadow: 0 0 30px rgba(0, 240, 255, 0.5); transform:translateY(-3px);
     }
 
-    .download-btn:hover, .back-btn:hover, .review-btn:hover, .delete-btn:hover, .reply-btn:hover, .auth-btn:hover, .submit-btn:hover{
-        border-color:#ff006e;
-        color: #ffffff;
-        box-shadow: 0 0 30px rgba(0, 240, 255, 0.5), 0 0 15px rgba(255, 0, 110, 0.3);
-        transform:translateY(-3px);
+    .google-btn{
+        background: rgba(239, 68, 68, 0.1); border-color: #ef4444; color: #ef4444; margin-top: 15px; width: 100%; padding: 14px 20px; font-size: 14px;
     }
+    .google-btn::before{ background: linear-gradient(90deg, #ef4444, #ff006e); }
+    .google-btn:hover{ border-color: #ff006e; box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); }
 
-    .back-btn{
-        margin-top:30px;
-        margin-right:20px;
-        border-color:#ff006e;
-        color: #ff006e;
-        box-shadow: 0 0 10px rgba(255, 0, 110, 0.2);
-    }
-    .back-btn::before{
-        background: linear-gradient(90deg, #ff006e, #00f0ff);
-    }
-    .back-btn:hover{
-        border-color: #00f0ff;
-    }
+    .back-btn{ margin-top:30px; margin-right:20px; border-color:#ff006e; color: #ff006e; }
+    .back-btn::before{ background: linear-gradient(90deg, #ff006e, #00f0ff); }
 
-    .delete-btn{
-        margin-top:10px;
-        padding:8px 18px;
-        font-size:13px;
-        border-color:#ef4444;
-        color: #ef4444;
-        background:rgba(239,68,68,0.05);
-        box-shadow: none;
-    }
+    .delete-btn{ margin-top:10px; padding:8px 18px; font-size:13px; border-color:#ef4444; color: #ef4444; background:rgba(239,68,68,0.05); }
     .delete-btn::before{ background: #ef4444; }
     .delete-btn:hover{ border-color:#dc2626; box-shadow:0 0 15px rgba(239,68,68,0.4); }
 
-    .reply-btn{
-        margin-top:10px;
-        padding:8px 18px;
-        font-size:13px;
-        border-color:#00f0ff;
-    }
+    .reply-btn{ margin-top:10px; padding:8px 18px; font-size:13px; border-color:#00f0ff; }
 
-    #download-status{
-        margin-top:25px;
-        color:#00f0ff;
-        font-family: 'Orbitron', sans-serif;
-        font-size:15px;
-        min-height:24px;
-        font-weight:700;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
-    }
+    #download-status{ margin-top:25px; color:#00f0ff; font-family: 'Orbitron', sans-serif; font-size:15px; min-height:24px; font-weight:700; text-transform: uppercase; }
 
-    /* HUD FEATURE PAGE */
-    .feature-page{
-        min-height:100vh;
-        padding:120px 40px;
-        text-align:center;
+    /* HUD FEATURE & SECURITY PAGES */
+    .feature-page, .security-page{ min-height:100vh; padding:120px 40px; text-align:center; }
+    .feature-page h1, .security-page h1{
+        font-family: 'Orbitron', sans-serif; font-size:55px; margin-bottom:30px; text-transform: uppercase;
+        background:linear-gradient(135deg, #ffffff, #00f0ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:900;
     }
+    .feature-page p, .security-page p{ font-size:22px; color:#94a3b8; max-width:800px; margin:0 auto 40px; line-height:1.6; }
 
-    .feature-page h1{
-        font-family: 'Orbitron', sans-serif;
-        font-size:55px;
-        margin-bottom:30px;
-        text-transform: uppercase;
-        background:linear-gradient(135deg, #ffffff, #00f0ff);
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;
-        background-clip:text;
-        font-weight:900;
+    .feature-details, .security-details{
+        background: rgba(11, 11, 30, 0.6); border: 2px solid #00f0ff; box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+        border-radius: 4px; padding:40px; max-width:800px; margin:40px auto; backdrop-filter:blur(15px); -webkit-backdrop-filter:blur(15px);
     }
-
-    .feature-page p{
-        font-size:22px;
-        color:#94a3b8;
-        max-width:800px;
-        margin:0 auto 40px;
-        line-height:1.6;
-    }
-
-    .feature-details{
-        background: rgba(11, 11, 30, 0.6);
-        border: 2px solid #00f0ff;
-        box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
-        border-radius: 4px;
-        padding:40px;
-        max-width:800px;
-        margin:40px auto;
-        backdrop-filter:blur(15px);
-        -webkit-backdrop-filter:blur(15px);
-    }
-
-    .feature-details li{
-        list-style: none;
-        text-align:left;
-        margin:18px 0;
-        color:#cbd5e1;
-        font-size:20px;
-        font-weight: 600;
-    }
-
-    .feature-details li::before{
-        content:'// ';
-        color:#ff006e;
-        font-weight:900;
-        margin-right:10px;
-        text-shadow: 0 0 5px #ff006e;
-    }
+    .feature-details li{ list-style: none; text-align:left; margin:18px 0; color:#cbd5e1; font-size:20px; font-weight: 600; }
+    .feature-details li::before{ content:'// '; color:#ff006e; font-weight:900; margin-right:10px; }
 
     /* REVIEWS HUD SECTION */
-    .reviews-section{
-        padding:120px 20px;
-        position:relative;
-        z-index:5;
-    }
-
+    .reviews-section{ padding:120px 20px; position:relative; z-index:5; }
     .reviews-section h2{
-        font-family: 'Orbitron', sans-serif;
-        font-size:55px;
-        margin-bottom:60px;
-        font-weight:900;
-        text-transform: uppercase;
-        background:linear-gradient(135deg, #ffffff, #ff006e);
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;
-        background-clip:text;
-        text-align:center;
+        font-family: 'Orbitron', sans-serif; font-size:55px; margin-bottom:60px; font-weight:900; text-transform: uppercase;
+        background:linear-gradient(135deg, #ffffff, #ff006e); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; text-align:center;
     }
-
-    .reviews-container{
-        max-width:1000px;
-        margin:0 auto;
-    }
-
+    .reviews-container{ max-width:1000px; margin:0 auto; }
     .review-card{
-        background: rgba(11, 11, 30, 0.5);
-        border: 1px solid rgba(0, 240, 255, 0.2);
-        border-left: 4px solid #00f0ff;
-        border-radius: 4px;
-        padding:25px;
-        margin-bottom:25px;
-        backdrop-filter:blur(15px);
-        -webkit-backdrop-filter:blur(15px);
-        transition:all 0.3s ease;
+        background: rgba(11, 11, 30, 0.5); border: 1px solid rgba(0, 240, 255, 0.2); border-left: 4px solid #00f0ff;
+        border-radius: 4px; padding:25px; margin-bottom:25px; backdrop-filter:blur(15px); -webkit-backdrop-filter:blur(15px); transition:all 0.3s ease;
     }
-
-    .review-card:hover{
-        border-color:#00f0ff;
-        box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
-        transform:translateX(8px);
-    }
-
-    .review-header{
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        margin-bottom:15px;
-        flex-wrap:wrap;
-        gap:15px;
-    }
-
-    .review-author-section{
-        display:flex;
-        align-items:center;
-        gap:15px;
-    }
-
-    .user-avatar{
-        width:50px;
-        height:50px;
-        border-radius:4px;
-        object-fit:cover;
-        border:2px solid #00f0ff;
-        box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
-    }
-
-    .review-info{
-        display:flex;
-        flex-direction:column;
-    }
-
-    .review-author{
-        font-family: 'Orbitron', sans-serif;
-        font-weight:700;
-        color:#00f0ff;
-        font-size:16px;
-    }
-
+    .review-card:hover{ border-color:#00f0ff; box-shadow: 0 0 15px rgba(0, 240, 255, 0.2); transform:translateX(8px); }
+    .review-header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; flex-wrap:wrap; gap:15px; }
+    .review-author-section{ display:flex; align-items:center; gap:15px; }
+    .user-avatar{ width:50px; height:50px; border-radius:4px; object-fit:cover; border:2px solid #00f0ff; }
+    .review-info{ display:flex; flex-direction:column; }
+    .review-author{ font-family: 'Orbitron', sans-serif; font-weight:700; color:#00f0ff; font-size:16px; }
     .creator-badge{
-        background: linear-gradient(135deg, #ff006e, #7c3aed);
-        padding:4px 12px;
-        border-radius: 2px;
-        font-family: 'Orbitron', sans-serif;
-        font-size:11px;
-        font-weight:900;
-        color:white;
-        display:inline-block;
-        width:fit-content;
-        margin-top:4px;
-        letter-spacing: 1px;
-        box-shadow: 0 0 8px rgba(255, 0, 110, 0.4);
+        background: linear-gradient(135deg, #ff006e, #7c3aed); padding:4px 12px; border-radius: 2px;
+        font-family: 'Orbitron', sans-serif; font-size:11px; font-weight:900; color:white; display:inline-block; margin-top:4px; letter-spacing: 1px;
     }
-
-    .review-date{
-        color:#64748b;
-        font-size:14px;
-        margin-top:4px;
-        font-weight: 500;
-    }
-
-    .review-rating{
-        color:#fbbf24;
-        margin-bottom:10px;
-        font-size:18px;
-        letter-spacing:3px;
-        filter: drop-shadow(0 0 5px rgba(251, 191, 36, 0.4));
-    }
-
-    .review-text{
-        color:#cbd5e1;
-        line-height:1.5;
-        margin-bottom:15px;
-        font-weight: 500;
-    }
-
-    .review-actions{
-        display:flex;
-        gap:10px;
-        flex-wrap:wrap;
-    }
+    .review-date{ color:#64748b; font-size:14px; margin-top:4px; }
+    .review-rating{ color:#fbbf24; margin-bottom:10px; font-size:18px; letter-spacing:3px; }
+    .review-text{ color:#cbd5e1; line-height:1.5; margin-bottom:15px; font-weight: 500; }
+    .review-actions{ display:flex; gap:10px; flex-wrap:wrap; }
 
     /* REPLIES */
-    .replies-section{
-        margin-top:20px;
-        padding-top:20px;
-        border-top:1px solid rgba(0, 240, 255, 0.1);
-    }
+    .replies-section{ margin-top:20px; padding-top:20px; border-top:1px solid rgba(0, 240, 255, 0.1); }
+    .reply-card{ background: rgba(2, 2, 8, 0.6); border-left: 3px solid #ff006e; border-radius: 2px; padding:15px; margin-bottom:15px; margin-left:20px; display:flex; gap:15px; }
+    .reply-avatar{ width:40px; height:40px; border-radius: 2px; object-fit:cover; border:1px solid #ff006e; flex-shrink:0; }
+    .reply-content{ flex:1; }
+    .reply-header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; }
+    .reply-author{ font-family: 'Orbitron', sans-serif; font-weight:700; color:#ff006e; }
+    .reply-date{ font-size:13px; color:#64748b; }
+    .reply-text{ color:#cbd5e1; font-size:16px; line-height:1.5; }
 
-    .reply-card{
-        background: rgba(2, 2, 8, 0.6);
-        border-left: 3px solid #ff006e;
-        border-radius: 2px;
-        padding:15px;
-        margin-bottom:15px;
-        margin-left:20px;
-        display:flex;
-        gap:15px;
-    }
-
-    .reply-avatar{
-        width:40px;
-        height:40px;
-        border-radius: 2px;
-        object-fit:cover;
-        border:1px solid #ff006e;
-        flex-shrink:0;
-    }
-
-    .reply-content{
-        flex:1;
-    }
-
-    .reply-header{
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        margin-bottom:6px;
-        gap:10px;
-    }
-
-    .reply-author{
-        font-family: 'Orbitron', sans-serif;
-        font-weight:700;
-        color:#ff006e;
-    }
-
-    .reply-date{
-        font-size:13px;
-        color:#64748b;
-    }
-
-    .reply-text{
-        color:#cbd5e1;
-        font-size:16px;
-        line-height:1.5;
-    }
-
-    /* CYBER HUD FORMS */
+    /* FORMS */
     .auth-form-container, .review-form-container{
-        max-width:600px;
-        margin:40px auto;
-        background: rgba(11, 11, 30, 0.6);
-        border: 2px solid #00f0ff;
-        box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
-        border-radius: 4px;
-        padding:35px;
-        backdrop-filter:blur(20px);
-        -webkit-backdrop-filter:blur(20px);
+        max-width:600px; margin:40px auto; background: rgba(11, 11, 30, 0.6); border: 2px solid #00f0ff;
+        box-shadow: 0 0 25px rgba(0, 240, 255, 0.15); border-radius: 4px; padding:35px; backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
     }
-
     .auth-form-container h3, .review-form-container h3{
-        font-family: 'Orbitron', sans-serif;
-        font-size:24px;
-        margin-bottom:25px;
-        color:#fff;
-        font-weight:700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        border-bottom: 1px solid rgba(0, 240, 255, 0.2);
-        padding-bottom: 10px;
+        font-family: 'Orbitron', sans-serif; font-size:24px; margin-bottom:25px; color:#fff; text-transform: uppercase;
+        border-bottom: 1px solid rgba(0, 240, 255, 0.2); padding-bottom: 10px;
     }
-
-    .form-group{
-        margin-bottom:20px;
-        text-align:left;
-    }
-
-    .form-group label{
-        display:block;
-        margin-bottom:8px;
-        color:#00f0ff;
-        font-weight:700;
-        text-transform: uppercase;
-        font-size: 14px;
-        letter-spacing: 1px;
-    }
-
+    .form-group{ margin-bottom:20px; text-align:left; }
+    .form-group label{ display:block; margin-bottom:8px; color:#00f0ff; font-weight:700; text-transform: uppercase; font-size: 14px; }
     .form-group input, .form-group textarea, .form-group select{
-        width:100%;
-        padding:12px 15px;
-        background: #020208;
-        border: 1px solid rgba(0, 240, 255, 0.4);
-        border-radius: 4px;
-        color:white;
-        font-family: 'Rajdhani', sans-serif;
-        font-size: 18px;
-        font-weight: 600;
-        transition:all 0.3s ease;
+        width:100%; padding:12px 15px; background: #020208; border: 1px solid rgba(0, 240, 255, 0.4); border-radius: 4px; color:white;
+        font-family: 'Rajdhani', sans-serif; font-size: 18px; font-weight: 600; transition:all 0.3s ease;
     }
-
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus{
-        outline:none;
-        border-color:#ff006e;
-        box-shadow: 0 0 15px rgba(255, 0, 110, 0.3);
-    }
-
-    .form-group textarea{
-        resize:vertical;
-        min-height:110px;
-    }
-
-    .avatar-preview{
-        width:80px;
-        height:80px;
-        border-radius:4px;
-        margin-top:10px;
-        border:2px solid #00f0ff;
-        object-fit:cover;
-    }
-
-    .submit-btn, .submit-review-btn{
-        width:100%;
-        margin-top:10px;
-    }
-
-    .submit-reply-btn{
-        padding:10px 25px;
-        margin-top:15px;
-        font-size: 14px;
-    }
-
-    .form-toggle{
-        text-align:center;
-        margin-top:20px;
-        color:#cbd5e1;
-        font-weight: 600;
-    }
-
-    .form-toggle a{
-        color:#00f0ff;
-        cursor:pointer;
-        text-decoration:none;
-        font-weight: 700;
-    }
-
-    .form-toggle a:hover{
-        color:#ff006e;
-        text-shadow: 0 0 5px rgba(255, 0, 110, 0.5);
-    }
-
-    .error-msg{
-        background:rgba(239,68,68,0.15);
-        border:1px solid #ef4444;
-        color:#fca5a5;
-        padding:12px;
-        border-radius:4px;
-        margin-bottom:15px;
-        display:none;
-        font-weight: 600;
-    }
-
-    .success-msg{
-        background:rgba(34,197,94,0.15);
-        border:1px solid #22c55e;
-        color:#86efac;
-        padding:12px;
-        border-radius:4px;
-        margin-bottom:15px;
-        display:none;
-        font-weight: 600;
-    }
-
-    .divider{
-        text-align:center;
-        margin:20px 0;
-        color:#64748b;
-        position:relative;
-        font-family: 'Orbitron', sans-serif;
-        font-weight: 700;
-        font-size: 12px;
-    }
-
-    .divider::before, .divider::after{
-        content:'';
-        position:absolute;
-        top:50%;
-        width:42%;
-        height:1px;
-        background:rgba(0, 240, 255, 0.2);
-    }
-    .divider::before { left: 0; }
-    .divider::after { right: 0; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus{ outline:none; border-color:#ff006e; box-shadow: 0 0 15px rgba(255, 0, 110, 0.3); }
+    .form-group textarea{ resize:vertical; min-height:110px; }
+    .avatar-preview{ width:80px; height:80px; border-radius:4px; margin-top:10px; border:2px solid #00f0ff; object-fit:cover; }
+    .submit-btn, .submit-review-btn{ width:100%; margin-top:10px; }
+    .submit-reply-btn{ padding:10px 25px; margin-top:15px; font-size: 14px; }
+    .form-toggle{ text-align:center; margin-top:20px; color:#cbd5e1; font-weight: 600; }
+    .form-toggle a{ color:#00f0ff; cursor:pointer; font-weight: 700; }
+    .form-toggle a:hover{ color:#ff006e; text-shadow: 0 0 5px rgba(255, 0, 110, 0.5); }
+    .error-msg{ background:rgba(239,68,68,0.15); border:1px solid #ef4444; color:#fca5a5; padding:12px; border-radius:4px; margin-bottom:15px; display:none; }
+    .success-msg{ background:rgba(34,197,94,0.15); border:1px solid #22c55e; color:#86efac; padding:12px; border-radius:4px; margin-bottom:15px; display:none; }
+    .divider{ text-align:center; margin:20px 0; color:#64748b; position:relative; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 12px; }
+    .divider::before, .divider::after{ content:''; position:absolute; top:50%; width:42%; height:1px; background:rgba(0, 240, 255, 0.2); }
+    .divider::before { left: 0; } .divider::after { right: 0; }
 
     /* GAMING FEATURES GRID */
-    .section{
-        padding:100px 20px;
-        text-align:center;
-        position:relative;
-        z-index:5;
-    }
-
+    .section{ padding:100px 20px; text-align:center; position:relative; z-index:5; }
     .section h2{
-        font-family: 'Orbitron', sans-serif;
-        font-size:55px;
-        margin-bottom:60px;
-        font-weight:900;
-        text-transform: uppercase;
-        background:linear-gradient(135deg, #ffffff, #00f0ff);
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;
-        background-clip:text;
+        font-family: 'Orbitron', sans-serif; font-size:55px; margin-bottom:60px; font-weight:900; text-transform: uppercase;
+        background:linear-gradient(135deg, #ffffff, #00f0ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
     }
-
-    .grid{
-        display:grid;
-        grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-        gap:35px;
-        max-width:1100px;
-        margin:auto;
-    }
-
+    .grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:35px; max-width:1100px; margin:auto; }
     .card{
-        background: rgba(11, 11, 30, 0.4);
-        padding:45px 30px;
-        border-radius: 4px;
-        border: 1px solid rgba(0, 240, 255, 0.2);
-        backdrop-filter:blur(15px);
-        -webkit-backdrop-filter:blur(15px);
-        transition:all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        cursor:pointer;
-        position:relative;
-        overflow:hidden;
+        background: rgba(11, 11, 30, 0.4); padding:45px 30px; border-radius: 4px; border: 1px solid rgba(0, 240, 255, 0.2);
+        backdrop-filter:blur(15px); -webkit-backdrop-filter:blur(15px); transition:all 0.4s cubic-bezier(0.16, 1, 0.3, 1); cursor:pointer; position:relative; overflow:hidden;
     }
-
-    .card::before{
-        content:'';
-        position:absolute;
-        top:0;
-        left:-100%;
-        width:100%;
-        height:100%;
-        background:linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(255, 0, 110, 0.05));
-        transition:left 0.4s ease;
-        z-index:0;
-    }
-
-    .card:hover::before{
-        left:0;
-    }
-
-    .card:hover{
-        border-color:#00f0ff;
-        transform:translateY(-10px);
-        box-shadow: 0 15px 35px rgba(0, 240, 255, 0.2);
-    }
-
-    .card-content{
-        font-family: 'Orbitron', sans-serif;
-        font-size:20px;
-        font-weight:700;
-        position:relative;
-        z-index:1;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
+    .card::before{ content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(255, 0, 110, 0.05)); transition:left 0.4s ease; z-index:0; }
+    .card:hover::before{ left:0; }
+    .card:hover{ border-color:#00f0ff; transform:translateY(-10px); box-shadow: 0 15px 35px rgba(0, 240, 255, 0.2); }
+    .card-content{ font-family: 'Orbitron', sans-serif; font-size:20px; font-weight:700; position:relative; z-index:1; text-transform: uppercase; }
 
     /* SUPPORT SECTION */
-    .support{
-        text-align:center;
-        padding:90px 20px;
-        position:relative;
-        z-index:5;
-    }
-
+    .support{ text-align:center; padding:90px 20px; position:relative; z-index:5; }
     .support h3{
-        font-family: 'Orbitron', sans-serif;
-        font-size:45px;
-        margin-bottom:35px;
-        font-weight:900;
-        text-transform: uppercase;
-        background:linear-gradient(135deg, #ffffff, #ff006e);
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;
-        background-clip:text;
+        font-family: 'Orbitron', sans-serif; font-size:45px; margin-bottom:35px; font-weight:900; text-transform: uppercase;
+        background:linear-gradient(135deg, #ffffff, #ff006e); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
     }
-
     .support a{
-        display:inline-block;
-        background: linear-gradient(135deg, #ff006e, #7c3aed);
-        padding:18px 45px;
-        border-radius: 4px;
-        color:white;
-        text-decoration:none;
-        font-family: 'Orbitron', sans-serif;
-        font-weight:900;
-        font-size: 16px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        box-shadow: 0 0 15px rgba(255, 0, 110, 0.3);
-        transition:all 0.4s ease;
+        display:inline-block; background: linear-gradient(135deg, #ff006e, #7c3aed); padding:18px 45px; border-radius: 4px; color:white;
+        text-decoration:none; font-family: 'Orbitron', sans-serif; font-weight:900; font-size: 16px; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 0 15px rgba(255, 0, 110, 0.3); transition:all 0.4s ease;
     }
-
-    .support a:hover{
-        transform:translateY(-4px);
-        box-shadow: 0 0 30px rgba(255, 0, 110, 0.6), 0 0 15px rgba(124, 58, 237, 0.4);
-    }
+    .support a:hover{ transform:translateY(-4px); box-shadow: 0 0 30px rgba(255, 0, 110, 0.6); }
 
     /* ADMIN PANEL HUD */
     .admin-section{
-        max-width:900px;
-        margin:50px auto;
-        background: rgba(220, 38, 38, 0.05);
-        border: 2px solid #ef4444;
-        box-shadow: 0 0 20px rgba(239, 68, 68, 0.1);
-        border-radius: 4px;
-        padding:30px;
-        display:none;
-        text-align:center;
+        max-width:900px; margin:50px auto; background: rgba(220, 38, 38, 0.05); border: 2px solid #ef4444;
+        box-shadow: 0 0 20px rgba(239, 68, 68, 0.1); border-radius: 4px; padding:30px; display:none; text-align:center;
     }
-
-    .admin-section h3{
-        font-family: 'Orbitron', sans-serif;
-        color:#ef4444;
-        font-size:24px;
-        margin-bottom:15px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .admin-section p{
-        font-weight: 600;
-        margin-bottom: 20px;
-    }
+    .admin-section h3{ font-family: 'Orbitron', sans-serif; color:#ef4444; font-size:24px; margin-bottom:15px; text-transform: uppercase; }
+    .admin-section p{ font-weight: 600; margin-bottom: 20px; }
 
     /* SCROLLBAR */
-    ::-webkit-scrollbar {
-        width: 10px;
-    }
-    ::-webkit-scrollbar-track {
-        background: #020208;
-    }
-    ::-webkit-scrollbar-thumb {
-        background: #00f0ff;
-        border-radius: 2px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background: #ff006e;
-    }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #020208; }
+    ::-webkit-scrollbar-thumb { background: #00f0ff; border-radius: 2px; }
+    ::-webkit-scrollbar-thumb:hover { background: #ff006e; }
     </style>
 </head>
 <body>
@@ -945,7 +392,7 @@
 
     <div id="auth-modal" style="display:none; position:fixed; inset:0; background:rgba(2,2,8,0.85); z-index:200; align-items:center; justify-content:center; backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);">
         <div class="auth-form-container" style="position:relative; width:90%; max-width:500px;">
-            <button onclick="closeAuthModal()" style="position:absolute; top:15px; right:20px; background:none; border:none; color:#64748b; font-size:24px; cursor:pointer; font-family:inherit;">&times;</button>
+            <button onclick="closeAuthModal()" style="position:absolute; top:15px; right:20px; background:none; border:none; color:#64748b; font-size:24px; cursor:pointer;">&times;</button>
             
             <div id="login-form-section">
                 <h3 id="login-title">Zaloguj się</h3>
@@ -962,7 +409,7 @@
                     <button type="submit" class="auth-btn submit-btn" id="login-btn">🔐 Zaloguj się</button>
                 </form>
                 <div class="divider" id="or-text-1">LUB</div>
-                <div id="google-login-container" style="display:flex; justify-content:center; margin-bottom:15px;"></div>
+                <button type="button" class="google-btn" onclick="loginWithGoogle()" id="google-login-btn">🔴 Zaloguj przez Google</button>
                 <div class="form-toggle">
                     <span id="no-account-text">Nie masz konta? </span>
                     <a onclick="showRegister()" id="switch-to-register">Zarejestruj się</a>
@@ -996,8 +443,6 @@
                     </div>
                     <button type="submit" class="auth-btn submit-btn" id="register-btn">✓ Zarejestruj się</button>
                 </form>
-                <div class="divider" id="or-text-2">LUB</div>
-                <div id="google-signup-container" style="display:flex; justify-content:center; margin-bottom:15px;"></div>
                 <div class="form-toggle">
                     <span id="have-account-text">Masz już konto? </span>
                     <a onclick="showLogin()" id="switch-to-login">Zaloguj się</a>
@@ -1010,6 +455,7 @@
         <div class="logo" onclick="goToHome()">⚡ Clearnix</div>
         <div class="nav-right">
             <a href="#" onclick="goToHome(); return false;" id="nav-home">Home</a>
+            <a href="#" onclick="goToSecurity(); return false;" id="nav-security">Bezpieczeństwo</a>
             <a href="#" onclick="goToReviews(); return false;" id="nav-reviews">Reviews</a>
             
             <div id="user-profile" style="display:none; color:#00f0ff; font-weight:700; display:flex; align-items:center; gap:12px;">
@@ -1080,6 +526,18 @@
         </div>
     </div>
 
+    <div id="security-page" class="page">
+        <div class="security-page">
+            <button class="back-btn" onclick="goToHome()" id="security-back-btn">← Powrót</button>
+            <h1 id="security-title">Bezpieczeństwo</h1>
+            <p id="security-desc">Twoje zaufanie jest naszym priorytetem.</p>
+            <div class="security-details" style="text-align: left; line-height: 1.8; font-size: 19px; color: #cbd5e1;">
+                <p id="security-p1" style="margin-bottom: 20px;">🛡️ <strong>100% Bezpieczeństwa:</strong> Clearnix nie zawiera żadnego złośliwego oprogramowania, wirusów ani ukrytych koparek kryptowalut. Wszystkie modyfikacje rejestru i skrypty optymalizacyjne są jawne i bezpieczne dla Twojego komputera.</p>
+                <p id="security-p2">🔒 <strong>Prywatność danych:</strong> Program nie zbiera Twoich prywatnych plików, haseł ani historii przeglądania. Dbamy o transparentność i czystość kodu.</p>
+            </div>
+        </div>
+    </div>
+
     <div id="reviews-page" class="page">
         <div class="reviews-section" style="padding-top:140px;">
             <button class="back-btn" onclick="goToHome()" id="reviews-back-btn">← Powrót</button>
@@ -1122,230 +580,120 @@
             <div id="admin-section" class="admin-section">
                 <h3>👑 Panel Administratora</h3>
                 <p id="admin-info"></p>
-                <button onclick="exportReviews()" style="background:#ff006e; color:white; border:none; padding:12px 25px; font-family:'Orbitron', sans-serif; font-weight:700; border-radius:4px; cursor:pointer; text-transform:uppercase; box-shadow: 0 0 10px rgba(255,0,110,0.3);">Exportuj opinie do pliku</button>
+                <button onclick="exportReviews()" style="background:#ff006e; color:white; border:none; padding:12px 25px; font-family:'Orbitron', sans-serif; font-weight:700; border-radius:4px; cursor:pointer; text-transform:uppercase;">Exportuj opinie do pliku</button>
             </div>
         </div>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 
     <script>
-    /* GLOBAL APP VARIABLES */
+    /* ==========================================
+       TUTAJ WKLEJ SWÓJ CONFIG Z PANELU FIREBASE,
+       ABY OPINIE BYŁY WIDOCZNE DLA KAŻDEGO!
+       ========================================== */
+    const firebaseConfig = {
+        apiKey: "TWÓJ_API_KEY",
+        authDomain: "TWÓJ_AUTH_DOMAIN",
+        databaseURL: "TWÓJ_DATABASE_URL",
+        projectId: "TWÓJ_PROJECT_ID",
+        storageBucket: "TWÓJ_STORAGE_BUCKET",
+        messagingSenderId: "TWÓJ_MESSAGING_SENDER_ID",
+        appId: "TWÓJ_APP_ID"
+    };
+
+    // Automatyczne sprawdzenie, czy skonfigurowałeś Firebase
+    const isFirebaseConfigured = firebaseConfig.apiKey !== "TWÓJ_API_KEY";
+
     let currentUser=null;
     let userEmail=null;
     let userAvatar=null;
     let currentLang='pl';
     const ADMIN_EMAIL='clearnixapp@gmail.com';
-    let firebaseAuth=null;
 
     /* TRANSLATION DICTIONARY */
     const translations={
         pl:{
-            title:"Optymalizuj swój Windows jak profesjonalista",
-            desc:"Zwiększ FPS, usuń lag i przyspiesz system.",
-            download:"⬇ Pobierz",
-            how:"Jak to działa",
-            c1:"⚡ Optymalizuje twój PC",
-            c2:"🌐 Optymalizuje internet",
-            c3:"🧹 Czyści niepotrzebne pliki",
-            support:"Wesprzyj nas",
-            'reviews-title':"Opinie użytkowników",
-            'add-review':"💬 Dodaj opinię",
-            'nav-home':"Home",
-            'nav-reviews':"Reviews",
-            'back-home':"← Powrót",
-            'login-title':"Zaloguj się",
-            'login-desc':"Zaloguj się, aby dodać opinię",
-            'login-email-label':"Email:",
-            'login-password-label':"Hasło:",
-            'login-btn':"🔐 Zaloguj się",
-            'no-account-text':"Nie masz konta?",
-            'switch-to-register':"Zarejestruj się",
-            'register-title':"Zarejestruj się",
-            'register-desc':"Stwórz konto, aby dodawać opinie",
-            'register-username-label':"Nazwa użytkownika:",
-            'register-email-label':"Email:",
-            'register-avatar-label':"Link do awatara (URL):",
-            'register-password-label':"Hasło:",
-            'register-confirm-label':"Powtórz hasło:",
-            'register-btn':"✓ Zarejestruj się",
-            'have-account-text':"Masz już konto?",
-            'switch-to-login':"Zaloguj się",
-            'rating-label':"Ocena:",
-            'opinion-label':"Twoja opinia:",
-            'submit-btn':"Wyślij opinię",
-            'reviews-page-title':"Wszystkie opinie",
-            'all-reviews-title':"Wszystkie opinie",
-            'logged-user':"Zalogowany jako:",
-            'logout-btn':"Wyloguj",
-            'login-prompt-title':"Zaloguj się aby dodać opinię",
-            'open-login-btn':"🔐 Zaloguj się"
+            title:"Optymalizuj swój Windows jak profesjonalista", desc:"Zwiększ FPS, usuń lag i przyspiesz system.", download:"⬇ Pobierz",
+            how:"Jak to działa", c1:"⚡ Optymalizuje twój PC", c2:"🌐 Optymalizuje internet", c3:"🧹 Czyści niepotrzebne pliki",
+            support:"Wesprzyj nas", 'reviews-title':"Opinie użytkowników", 'add-review':"💬 Dodaj opinię",
+            'nav-home':"Home", 'nav-reviews':"Reviews", 'nav-security': "Bezpieczeństwo", 'back-home':"← Powrót",
+            'login-title':"Zaloguj się", 'login-email-label':"Email:", 'login-password-label':"Hasło:", 'login-btn':"🔐 Zaloguj się",
+            'google-login-btn': "🔴 Zaloguj przez Google", 'no-account-text':"Nie masz konta?", 'switch-to-register':"Zarejestruj się",
+            'register-title':"Zarejestruj się", 'register-username-label':"Nazwa użytkownika:", 'register-email-label':"Email:",
+            'register-avatar-label':"Link do awatara (URL):", 'register-password-label':"Hasło:", 'register-confirm-label':"Powtórz hasło:",
+            'register-btn':"✓ Zarejestruj się", 'have-account-text':"Masz już konto?", 'switch-to-login':"Zaloguj się",
+            'rating-label':"Ocena:", 'opinion-label':"Twoja opinia:", 'submit-btn':"Wyślij opinię", 'reviews-page-title':"Wszystkie opinie",
+            'all-reviews-title':"Wszystkie opinie", 'logout-btn':"Wyloguj", 'login-prompt-title':"Zaloguj się aby dodać opinię", 'open-login-btn':"🔐 Zaloguj się",
+            'sec-title': "Bezpieczeństwo", 'sec-desc': "Twoje zaufanie jest naszym priorytetem.",
+            'sec-p1': "🛡️ 100% Bezpieczeństwa: Clearnix nie zawiera żadnego złośliwego oprogramowania, wirusów ani ukrytych koparek kryptowalut. Wszystkie modyfikacje rejestru i skrypty optymalizacyjne są jawne i bezpieczne dla Twojego komputera.",
+            'sec-p2': "🔒 Prywatność danych: Program nie zbiera Twoich prywatnych plików, haseł ani historii przeglądania. Dbamy o transparentność i czystość kodu."
         },
         en:{
-            title:"Optimize your Windows like a pro",
-            desc:"Boost FPS, remove lag and speed up your system.",
-            download:"⬇ Download",
-            how:"How it works",
-            c1:"⚡ Optimizes your PC",
-            c2:"🌐 Optimizes internet",
-            c3:"🧹 Cleans unnecessary files",
-            support:"Support us",
-            'reviews-title':"User Reviews",
-            'add-review':"💬 Add Review",
-            'nav-home':"Home",
-            'nav-reviews':"Reviews",
-            'back-home':"← Back",
-            'login-title':"Sign in",
-            'login-desc':"Sign in to add a review",
-            'login-email-label':"Email:",
-            'login-password-label':"Password:",
-            'login-btn':"🔐 Sign in",
-            'no-account-text':"Don't have an account?",
-            'switch-to-register':"Sign up",
-            'register-title':"Sign up",
-            'register-desc':"Create an account to add reviews",
-            'register-username-label':"Username:",
-            'register-email-label':"Email:",
-            'register-avatar-label':"Avatar URL:",
-            'register-password-label':"Password:",
-            'register-confirm-label':"Confirm password:",
-            'register-btn':"✓ Sign up",
-            'have-account-text':"Already have an account?",
-            'switch-to-login':"Sign in",
-            'rating-label':"Rating:",
-            'opinion-label':"Your opinion:",
-            'submit-btn':"Submit Review",
-            'reviews-page-title':"All Reviews",
-            'all-reviews-title':"All Reviews",
-            'logged-user':"Logged in as:",
-            'logout-btn':"Logout",
-            'login-prompt-title':"Sign in to add a review",
-            'open-login-btn':"🔐 Sign in"
+            title:"Optimize your Windows like a pro", desc:"Boost FPS, remove lag and speed up your system.", download:"⬇ Download",
+            how:"How it works", c1:"⚡ Optimizes your PC", c2:"🌐 Optimizes internet", c3:"🧹 Cleans unnecessary files",
+            support:"Support us", 'reviews-title':"User Reviews", 'add-review':"💬 Add Review",
+            'nav-home':"Home", 'nav-reviews':"Reviews", 'nav-security': "Security", 'back-home':"← Back",
+            'login-title':"Sign in", 'login-email-label':"Email:", 'login-password-label':"Password:", 'login-btn':"🔐 Sign in",
+            'google-login-btn': "🔴 Sign in with Google", 'no-account-text':"Don't have an account?", 'switch-to-register':"Sign up",
+            'register-title':"Sign up", 'register-username-label':"Username:", 'register-email-label':"Email:",
+            'register-avatar-label':"Avatar URL:", 'register-password-label':"Password:", 'register-confirm-label':"Confirm password:",
+            'register-btn':"✓ Sign up", 'have-account-text':"Already have an account?", 'switch-to-login':"Sign in",
+            'rating-label':"Rating:", 'opinion-label':"Your opinion:", 'submit-btn':"Submit Review", 'reviews-page-title':"All Reviews",
+            'all-reviews-title':"All Reviews", 'logout-btn':"Logout", 'login-prompt-title':"Sign in to add a review", 'open-login-btn':"🔐 Sign in",
+            'sec-title': "Security", 'sec-desc': "Your trust is our priority.",
+            'sec-p1': "🛡️ 100% Secure: Clearnix does not contain any malware, viruses or hidden crypto miners. All registry modifications and optimization scripts are transparent and secure for your computer.",
+            'sec-p2': "🔒 Data Privacy: The application does not collect your private files, passwords or browsing history. We care about transparency and clean code."
         },
         de:{
-            title:"Optimieren Sie Ihr Windows wie ein Profi",
-            desc:"Erhöhen Sie die FPS, entfernen Sie Verzögerungen und beschleunigen Sie Ihr System.",
-            download:"⬇ Herunterladen",
-            how:"Wie es funktioniert",
-            c1:"⚡ Optimiert Ihren PC",
-            c2:"🌐 Optimiert das Internet",
-            c3:"🧹 Bereinigt unnötige Dateien",
-            support:"Unterstütze uns",
-            'reviews-title':"Benutzerbewertungen",
-            'add-review':"💬 Bewertung abgeben",
-            'nav-home':"Startseite",
-            'nav-reviews':"Bewertungen",
-            'back-home':"← Zurück",
-            'login-title':"Einloggen",
-            'login-desc':"Loggen Sie sich ein, um eine Bewertung abzugeben",
-            'login-email-label':"E-Mail:",
-            'login-password-label':"Passwort:",
-            'login-btn':"🔐 Einloggen",
-            'no-account-text':"Haben Sie kein Konto?",
-            'switch-to-register':"Registrieren",
-            'register-title':"Registrieren",
-            'register-desc':"Konto erstellen, um Bewertungen hinzuzufügen",
-            'register-username-label':"Benutzername:",
-            'register-email-label':"E-Mail:",
-            'register-avatar-label':"Avatar-URL:",
-            'register-password-label':"Passwort:",
-            'register-confirm-label':"Passwort bestätigen:",
-            'register-btn':"✓ Registrieren",
-            'have-account-text':"Haben Sie bereits ein Konto?",
-            'switch-to-login':"Einloggen",
-            'rating-label':"Bewertung:",
-            'opinion-label':"Ihre Meinung:",
-            'submit-btn':"Bewertung absenden",
-            'reviews-page-title':"Alle Bewertungen",
-            'all-reviews-title':"Alle Bewertungen",
-            'logged-user':"Eingeloggt als:",
-            'logout-btn':"Ausloggen",
-            'login-prompt-title':"Loggen Sie sich ein, um eine Bewertung abzugeben",
-            'open-login-btn':"🔐 Einloggen"
+            title:"Optimieren Sie Ihr Windows wie ein Profi", desc:"Erhöhen Sie die FPS, entfernen Sie Verzögerungen und beschleunigen Sie Ihr System.", download:"⬇ Herunterladen",
+            how:"Wie es funktioniert", c1:"⚡ Optimiert Ihren PC", c2:"🌐 Optimiert das Internet", c3:"🧹 Bereinigt unnötige Dateien",
+            support:"Unterstütze uns", 'reviews-title':"Benutzerbewertungen", 'add-review':"💬 Bewertung abgeben",
+            'nav-home':"Startseite", 'nav-reviews':"Bewertungen", 'nav-security': "Sicherheit", 'back-home':"← Zurück",
+            'login-title':"Einloggen", 'login-email-label':"E-Mail:", 'login-password-label':"Passwort:", 'login-btn':"🔐 Einloggen",
+            'google-login-btn': "🔴 Mit Google anmelden", 'no-account-text':"Haben Sie kein Konto?", 'switch-to-register':"Registrieren",
+            'register-title':"Registrieren", 'register-username-label':"Benutzername:", 'register-email-label':"E-Mail:",
+            'register-avatar-label':"Avatar-URL:", 'register-password-label':"Passwort:", 'register-confirm-label':"Passwort bestätigen:",
+            'register-btn':"✓ Registrieren", 'have-account-text':"Haben Sie bereits ein Konto?", 'switch-to-login':"Einloggen",
+            'rating-label':"Bewertung:", 'opinion-label':"Ihre Meinung:", 'submit-btn':"Bewertung absenden", 'reviews-page-title':"Alle Bewertungen",
+            'all-reviews-title':"Alle Bewertungen", 'logout-btn':"Ausloggen", 'login-prompt-title':"Loggen Sie sich ein, um eine Bewertung abzugeben", 'open-login-btn':"🔐 Einloggen",
+            'sec-title': "Sicherheit", 'sec-desc': "Vertrauen ist unsere Priorität.",
+            'sec-p1': "🛡️ 100% Sicher: Clearnix enthält keine Malware, Viren oder versteckten Krypto-Miner. Alle Register-Modifikationen sind sicher.",
+            'sec-p2': "🔒 Datenschutz: Das Programm sammelt keine privaten Dateien, Passwörter oder Browser-Verläufe."
         },
         ru:{
-            title:"Оптимизируйте Windows как профи",
-            desc:"Повышайте FPS, убирайте лаги и ускоряйте систему.",
-            download:"⬇ Скачать",
-            how:"Как это работает",
-            c1:"⚡ Оптимизирует ваш ПК",
-            c2:"🌐 Оптимизирует интернет",
-            c3:"🧹 Очищает ненужные файлы",
-            support:"Поддержите нас",
-            'reviews-title':"Отзывы пользователей",
-            'add-review':"💬 Добавить отзыв",
-            'nav-home':"Главная",
-            'nav-reviews':"Отзывы",
-            'back-home':"← Назад",
-            'login-title':"Вход",
-            'login-desc':"Войдите, чтобы добавить отзыв",
-            'login-email-label':"Email:",
-            'login-password-label':"Пароль:",
-            'login-btn':"🔐 Войти",
-            'no-account-text':"Нет аккаунта?",
-            'switch-to-register':"Регистрация",
-            'register-title':"Регистрация",
-            'register-desc':"Создайте аккаунт, чтобы оставлять отзывы",
-            'register-username-label':"Имя пользователя:",
-            'register-email-label':"Email:",
-            'register-avatar-label':"Ссылка на аватар (URL):",
-            'register-password-label':"Пароль:",
-            'register-confirm-label':"Повторите пароль:",
-            'register-btn':"✓ Регистрация",
-            'have-account-text':"Уже есть аккаунт?",
-            'switch-to-login':"Войти",
-            'rating-label':"Оценка:",
-            'opinion-label':"Ваш отзыв:",
-            'submit-btn':"Отправить отзыв",
-            'reviews-page-title':"Все отзывы",
-            'all-reviews-title':"Все отзывы",
-            'logged-user':"Вошел как:",
-            'logout-btn':"Выйти",
-            'login-prompt-title':"Войдите, чтобы оставить отзыв",
-            'open-login-btn':"🔐 Войти"
+            title:"Оптимизируйте Windows как профи", desc:"Повышайте FPS, убирайте лаги и ускоряйте систему.", download:"⬇ Скачать",
+            how:"Как это работает", c1:"⚡ Оптимизирует ваш ПК", c2:"🌐 Оптимизирует интернет", c3:"🧹 Очищает ненужные файлы",
+            support:"Поддержите нас", 'reviews-title':"Отзывы пользователей", 'add-review':"💬 Добавить отзыв",
+            'nav-home':"Главная", 'nav-reviews':"Отзывы", 'nav-security': "Безопасность", 'back-home':"← Назад",
+            'login-title':"Вход", 'login-email-label':"Email:", 'login-password-label':"Пароль:", 'login-btn':"🔐 Войти",
+            'google-login-btn': "🔴 Войти через Google", 'no-account-text':"Нет аккаунта?", 'switch-to-register':"Регистрация",
+            'register-title':"Регистрация", 'register-username-label':"Имя пользователя:", 'register-email-label':"Email:",
+            'register-avatar-label':"Ссылка на аватар (URL):", 'register-password-label':"Пароль:", 'register-confirm-label':"Повторите пароль:",
+            'register-btn':"✓ Регистрация", 'have-account-text':"Уже есть аккаунт?", 'switch-to-login':"Войти",
+            'rating-label':"Оценка:", 'opinion-label':"Ваш отзыв:", 'submit-btn':"Отправить отзыв", 'reviews-page-title':"Все отзывы",
+            'all-reviews-title':"Все отзывы", 'logout-btn':"Выйти", 'login-prompt-title':"Войдите, чтобы оставить отзыв", 'open-login-btn':"🔐 Войти",
+            'sec-title': "Безопасность", 'sec-desc': "Ваше доверие - наш приоритет.",
+            'sec-p1': "🛡️ 100% Безопасно: Clearnix не содержит вирусов или майнеров. Все скрипты оптимизации прозрачны и безопасны.",
+            'sec-p2': "🔒 Конфиденциальность: Программа не собирает ваши личные файлы, пароли или историю браузера."
         },
         ua:{
-            title:"Оптимізуйте Windows як професіонал",
-            desc:"Підвищуйте FPS, прибирайте лаги та прискорюйте систему.",
-            download:"⬇ Скачати",
-            how:"Як це працює",
-            c1:"⚡ Оптимізує ваш ПК",
-            c2:"🌐 Оптимізує інтернет",
-            c3:"🧹 Очищає непотрібні файли",
-            support:"Підтримайте нас",
-            'reviews-title':"Відгуки користувачів",
-            'add-review':"💬 Додати відгук",
-            'nav-home':"Головна",
-            'nav-reviews':"Відгуки",
-            'back-home':"← Назад",
-            'login-title':"Вхід",
-            'login-desc':"Увійдіть, щоб додати відгук",
-            'login-email-label':"Електронна пошта:",
-            'login-password-label':"Пароль:",
-            'login-btn':"🔐 Вхід",
-            'no-account-text':"Немає облікового запису?",
-            'switch-to-register':"Зареєструйтеся",
-            'register-title':"Реєстрація",
-            'register-desc':"Створіть обліковий запис для додавання відгуків",
-            'register-username-label':"Ім'я користувача:",
-            'register-email-label':"Електронна пошта:",
-            'register-avatar-label':"Аватар:",
-            'register-password-label':"Пароль:",
-            'register-confirm-label':"Повторіть пароль:",
-            'register-btn':"✓ Зареєструйтеся",
-            'have-account-text':"Вже є обліковий запис?",
-            'switch-to-login':"Вхід",
-            'rating-label':"Оцінка:",
-            'opinion-label':"Ваш відгук:",
-            'submit-btn':"Надіслати відгук",
-            'reviews-page-title':"Всі відгуки",
-            'all-reviews-title':"Всі відгуки",
-            'logged-user':"Увійшов як:",
-            'logout-btn':"Вихід",
-            'login-prompt-title':"Увійдіть, щоб додати відгук",
-            'open-login-btn':"🔐 Вхід"
+            title:"Оптимізуйте Windows як професіонал", desc:"Підвищуйте FPS, прибирайте лаги та прискорюйте систему.", download:"⬇ Скачати",
+            how:"Як це працює", c1:"⚡ Оптимізує ваш ПК", c2:"🌐 Оптимізує інтернет", c3:"🧹 Очищає непотрібні файли",
+            support:"Підтримайте нас", 'reviews-title':"Відгуки користувачів", 'add-review':"💬 Додати відгук",
+            'nav-home':"Головна", 'nav-reviews':"Відгуки", 'nav-security': "Безпека", 'back-home':"← Назад",
+            'login-title':"Вход", 'login-email-label':"Електронна пошта:", 'login-password-label':"Пароль:", 'login-btn':"🔐 Вхід",
+            'google-login-btn': "🔴 Увійти через Google", 'no-account-text':"Немає облікового запису?", 'switch-to-register':"Зареєструйтеся",
+            'register-title':"Реєстрація", 'register-username-label':"Ім'я користувача:", 'register-email-label':"Електронна пошта:",
+            'register-avatar-label':"Аватар:", 'register-password-label':"Пароль:", 'register-confirm-label':"Повторіть пароль:",
+            'register-btn':"✓ Зареєструйтеся", 'have-account-text':"Вже є обліковий запис?", 'switch-to-login':"Вхід",
+            'rating-label':"Оцінка:", 'opinion-label':"Ваш відгук:", 'submit-btn':"Надіслати відгук", 'reviews-page-title':"Всі відгуки",
+            'all-reviews-title':"Всі відгуки", 'logout-btn':"Вихід", 'login-prompt-title':"Увійдіть, щоб додати відгук", 'open-login-btn':"🔐 Вхід",
+            'sec-title': "Безпека", 'sec-desc': "Ваша довіра - наш пріоритет.",
+            'sec-p1': "🛡️ 100% Безпечно: Clearnix не містить шкідливих програм чи майнерів. Усі скрипти безпечні для ПК.",
+            'sec-p2': "🔒 Конфіденційність: Програма не збирає ваші файли, паролі чи історію."
         }
     };
 
@@ -1357,53 +705,73 @@
             {title:"Czyszczenie systemu", desc:"Pozbywa się gigabajtów zalegających śmieci spowalniających działanie dysków.", list:["Usuwanie plików tymczasowych (Temp)","Czyszczenie logów systemowych i raportów błędów","Oczyszczanie pamięci podręcznej przeglądarek i instalatorów Windows","Optymalizacja struktury rejestru systemowego"]}
         ],
         en:[
-            {title:"PC Optimization", desc:"Modifies hidden system configurations to extract maximum hardware performance for gaming and professional tasks.", list:["Disabling CPU throttling","Real-time RAM memory purging","Optimizing energy profiles for minimal system latency","Deactivating unneeded telemetry and background agents"]},
-            {title:"Network Optimization", desc:"Configures network parameters for the absolute lowest ping and stellar connection throughput.", list:["Fine-tuning TCP/IP values","Automatic switching to ultra-fast DNS servers","Mitigating packet queuing latency (Nagle algorithm toggle)","Flushing DNS system caches and resetting sockets"]},
+            {title:"PC Optimization", desc:"Modifies hidden system configurations to extract maximum hardware performance for gaming.", list:["Disabling CPU throttling","Real-time RAM memory purging","Optimizing energy profiles for minimal system latency","Deactivating unneeded telemetry and background agents"]},
+            {title:"Network Optimization", desc:"Configures network parameters for the absolute lowest ping.", list:["Fine-tuning TCP/IP values","Automatic switching to ultra-fast DNS servers","Mitigating packet queuing latency","Flushing DNS system caches and resetting sockets"]},
             {title:"System Deep Clean", desc:"Wipes out gigabytes of digital clutter decelerating your storage disks.", list:["Purging temporary files (Temp directory)","Cleaning deep system logs and error dumps","Wiping browser cache footprints and stale updates","Streamlining Windows Registry structures"]}
         ]
     };
 
-    /* INITIALIZE FIREBASE DYNAMICALLY OR LOCALSTORAGE BACKUP */
+    /* INITIALIZE FIREBASE WITH AUTH LISTENER */
     function initializeFirebase(){
-        try {
-            // Spróbuj pobrać konfigurację jeśli jest obecna w kodzie produkcyjnym, lub zapewnij domyślną inicjalizację.
-            // Jeśli podłączasz własny config Firebase, wklej go poniżej:
-            /*
-            const firebaseConfig = {
-                apiKey: "TWÓJ_API_KEY",
-                authDomain: "PROJECT.firebaseapp.com",
-                projectId: "PROJECT",
-                storageBucket: "PROJECT.appspot.com",
-                messagingSenderId: "ID",
-                appId: "APP_ID",
-                measurementId: "G-ID"
-            };
-            firebase.initializeApp(firebaseConfig);
-            */
-            firebaseAuth = firebase.auth();
-            firebase.analytics();
-        } catch(e) {
-            console.log("Firebase config not initialized yet. Using LocalStorage fallback mode.");
+        if(isFirebaseConfigured){
+            try {
+                firebase.initializeApp(firebaseConfig);
+                
+                // Nasłuchiwanie stanu autoryzacji w Firebase
+                firebase.auth().onAuthStateChanged((user) => {
+                    if (user) {
+                        currentUser = user.displayName || user.email.split('@')[0];
+                        userEmail = user.email;
+                        userAvatar = user.photoURL || '';
+                    } else {
+                        currentUser = null;
+                        userEmail = null;
+                        userAvatar = null;
+                    }
+                    updateUserProfile();
+                    loadReviews();
+                });
+            } catch(e) {
+                console.error("Błąd konfiguracji Firebase:", e);
+            }
+        } else {
+            console.log("Firebase nie został skonfigurowany. Tryb demonstracyjny LocalStorage włączony.");
         }
     }
 
-    function initializeGoogleAuth(){}
+    /* GOOGLE AUTH IMPLEMENTATION */
+    function loginWithGoogle() {
+        if(!isFirebaseConfigured) {
+            alert("Baza danych nie jest podłączona! Podłącz projekt Firebase w kodzie pliku, aby zalogować się przez Google.");
+            // Logowanie demo
+            currentUser = "Gracz Google (Demo)";
+            userEmail = "demo-user@gmail.com";
+            userAvatar = "";
+            updateUserProfile();
+            closeAuthModal();
+            loadReviews();
+            return;
+        }
+        const provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithPopup(provider).then((result) => {
+            closeAuthModal();
+        }).catch((error) => {
+            document.getElementById('login-error').innerText = error.message;
+            document.getElementById('login-error').style.display = 'block';
+        });
+    }
 
     /* NAVIGATION LOGIC */
-    function goToHome(){
-        document.getElementById('home-page').classList.add('active');
-        document.getElementById('feature-page').classList.remove('active');
-        document.getElementById('reviews-page').classList.remove('active');
-        window.scrollTo(0,0);
-    }
-
-    function goToReviews(){
+    function hideAllPages() {
         document.getElementById('home-page').classList.remove('active');
         document.getElementById('feature-page').classList.remove('active');
-        document.getElementById('reviews-page').classList.add('active');
-        window.scrollTo(0,0);
-        loadReviews();
+        document.getElementById('security-page').classList.remove('active');
+        document.getElementById('reviews-page').classList.remove('active');
     }
+
+    function goToHome(){ hideAllPages(); document.getElementById('home-page').classList.add('active'); window.scrollTo(0,0); }
+    function goToReviews(){ hideAllPages(); document.getElementById('reviews-page').classList.add('active'); window.scrollTo(0,0); loadReviews(); }
+    function goToSecurity(){ hideAllPages(); document.getElementById('security-page').classList.add('active'); window.scrollTo(0,0); }
 
     function showFeature(index){
         const langData = featureData[currentLang] || featureData['en'];
@@ -1412,34 +780,18 @@
         
         document.getElementById('feature-title').innerText = data.title;
         document.getElementById('feature-desc').innerText = data.desc;
+        document.getElementById('feature-list').innerHTML = data.list.map(item => `<li>${item}</li>`).join('');
         
-        const listContainer = document.getElementById('feature-list');
-        listContainer.innerHTML = data.list.map(item => `<li>${item}</li>`).join('');
-        
-        document.getElementById('home-page').classList.remove('active');
-        document.getElementById('reviews-page').classList.remove('active');
+        hideAllPages();
         document.getElementById('feature-page').classList.add('active');
         window.scrollTo(0,0);
     }
 
-    /* AUTH PANEL CONTROL */
-    function openAuthModal(){
-        document.getElementById('auth-modal').style.display='flex';
-        showLogin();
-    }
-    function closeAuthModal(){
-        document.getElementById('auth-modal').style.display='none';
-        document.getElementById('login-error').innerText='';
-        document.getElementById('register-error').innerText='';
-    }
-    function showLogin(){
-        document.getElementById('login-form-section').style.display='block';
-        document.getElementById('register-form-section').style.display='none';
-    }
-    function showRegister(){
-        document.getElementById('login-form-section').style.display='none';
-        document.getElementById('register-form-section').style.display='block';
-    }
+    /* AUTH MODAL CONTROLS */
+    function openAuthModal(){ document.getElementById('auth-modal').style.display='flex'; showLogin(); }
+    function closeAuthModal(){ document.getElementById('auth-modal').style.display='none'; document.getElementById('login-error').innerText=''; document.getElementById('register-error').innerText=''; }
+    function showLogin(){ document.getElementById('login-form-section').style.display='block'; document.getElementById('register-form-section').style.display='none'; }
+    function showRegister(){ document.getElementById('login-form-section').style.display='none'; document.getElementById('register-form-section').style.display='block'; }
 
     /* REALTIME AVATAR PREVIEW */
     document.addEventListener('DOMContentLoaded',()=>{
@@ -1447,32 +799,38 @@
         if(avatarInput){
             avatarInput.addEventListener('input',function(){
                 const img=document.getElementById('avatar-preview');
-                if(this.value){
-                    img.src=this.value;
-                    img.style.display='block';
-                } else {
-                    img.style.display='none';
-                }
+                if(this.value){ img.src=this.value; img.style.display='block'; } else { img.style.display='none'; }
             });
         }
     });
 
-    /* REVIEWS ENGINE (LOCAL STORAGE FALLBACK WITH FULL BACKWARD COMPATIBILITY) */
+    /* REVIEWS LOADER (FIREBASE REALTIME DB WITH LOCAL FALLBACK) */
     function loadReviews(){
-        let reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
-        
-        // Zbuduj widok 3 ostatnich opinii na stronę główną
-        let sortedReviews = [...reviews].sort((a,b)=>new Date(b.dateRaw) - new Date(a.dateRaw));
+        if(isFirebaseConfigured) {
+            firebase.database().ref('reviews').on('value', (snapshot) => {
+                const data = snapshot.val();
+                let reviews = [];
+                if(data) {
+                    reviews = Object.keys(data).map(key => ({ id: key, ...data[key] }));
+                }
+                renderReviews(reviews);
+            });
+        } else {
+            let reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
+            renderReviews(reviews);
+        }
+    }
+
+    function renderReviews(reviewsList) {
+        let sortedReviews = [...reviewsList].sort((a,b)=>new Date(b.dateRaw) - new Date(a.dateRaw));
         let topThree = sortedReviews.slice(0,3);
         
         let htmlHome = topThree.map(r => generateReviewCardHtml(r, false)).join('');
         document.getElementById('reviews-list').innerHTML = htmlHome || `<p style="color:#64748b;text-align:center;font-weight:700;">Brak opinii. Bądź pierwszy!</p>`;
         
-        // Zbuduj pełny widok wszystkich opinii na dedykowaną podstronę
         let htmlAll = sortedReviews.map(r => generateReviewCardHtml(r, true)).join('');
         document.getElementById('all-reviews-list').innerHTML = htmlAll || `<p style="color:#64748b;text-align:center;font-weight:700;">Brak opinii. Bądź pierwszy!</p>`;
         
-        // Zarządzanie widocznością panelu administratora
         if(userEmail === ADMIN_EMAIL){
             document.getElementById('admin-section').style.display = 'block';
             document.getElementById('admin-info').innerText = `Zalogowano jako Główny Administrator (${userEmail})`;
@@ -1540,27 +898,23 @@
         `;
     }
 
-    /* ACTION HANDLERS */
+    /* FORM SUBMISSIONS (EMAIL / PASSWORD) */
     function handleLogin(e){
         e.preventDefault();
         const email=document.getElementById('login-email').value;
         const password=document.getElementById('login-password').value;
-        const errorDiv=document.getElementById('login-error');
         
-        if(password.length < 6){
-            errorDiv.innerText='Hasło musi mieć minimum 6 znaków!';
-            errorDiv.style.display='block';
-            return;
+        if(isFirebaseConfigured) {
+            firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+                closeAuthModal();
+            }).catch(err => {
+                document.getElementById('login-error').innerText = err.message;
+                document.getElementById('login-error').style.display = 'block';
+            });
+        } else {
+            currentUser = email.split('@')[0]; userEmail = email; userAvatar = '';
+            updateUserProfile(); closeAuthModal(); loadReviews();
         }
-
-        // Symulacja logowania z pełnym wsparciem ról (Admin / User)
-        currentUser = email.split('@')[0];
-        userEmail = email;
-        userAvatar = '';
-        
-        updateUserProfile();
-        closeAuthModal();
-        loadReviews();
     }
 
     function handleRegister(e){
@@ -1572,27 +926,29 @@
         const confirm=document.getElementById('register-confirm-password').value;
         const errorDiv=document.getElementById('register-error');
 
-        if(password !== confirm){
-            errorDiv.innerText='Hasła nie są identyczne!';
-            errorDiv.style.display='block';
-            return;
+        if(password !== confirm){ errorDiv.innerText='Hasła nie są identyczne!'; errorDiv.style.display='block'; return; }
+
+        if(isFirebaseConfigured) {
+            firebase.auth().createUserWithEmailAndPassword(email, password).then((result) => {
+                result.user.updateProfile({ displayName: username, photoURL: avatar }).then(() => {
+                    // Wymuszenie odświeżenia profilu
+                    currentUser = username; userEmail = email; userAvatar = avatar;
+                    updateUserProfile(); closeAuthModal();
+                });
+            }).catch(err => { errorDiv.innerText = err.message; errorDiv.style.display = 'block'; });
+        } else {
+            currentUser = username; userEmail = email; userAvatar = avatar;
+            updateUserProfile(); closeAuthModal(); loadReviews();
         }
-
-        currentUser = username;
-        userEmail = email;
-        userAvatar = avatar;
-
-        updateUserProfile();
-        closeAuthModal();
-        loadReviews();
     }
 
     function handleLogout(){
-        currentUser = null;
-        userEmail = null;
-        userAvatar = null;
-        updateUserProfile();
-        loadReviews();
+        if(isFirebaseConfigured) {
+            firebase.auth().signOut();
+        } else {
+            currentUser = null; userEmail = null; userAvatar = null;
+            updateUserProfile(); loadReviews();
+        }
     }
 
     function updateUserProfile(){
@@ -1609,15 +965,13 @@
         }
     }
 
+    /* WRITE REVIEW EXECUTION */
     function handleReviewSubmit(e){
         e.preventDefault();
         const rating = document.getElementById('review-rating').value;
         const text = document.getElementById('opinion').value;
         
-        let reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
-        
         const newReview = {
-            id: 'rev_' + Date.now(),
             author: currentUser || 'Anonim',
             email: userEmail || '',
             avatar: userAvatar || '',
@@ -1628,20 +982,29 @@
             replies: []
         };
 
-        reviews.push(newReview);
-        localStorage.setItem('reviews', JSON.stringify(reviews));
-        
+        if(isFirebaseConfigured) {
+            firebase.database().ref('reviews').push(newReview).then(() => {
+                showReviewSuccess();
+            });
+        } else {
+            let reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
+            newReview.id = 'rev_' + Date.now();
+            reviews.push(newReview);
+            localStorage.setItem('reviews', JSON.stringify(reviews));
+            showReviewSuccess();
+            loadReviews();
+        }
+    }
+
+    function showReviewSuccess() {
         document.getElementById('opinion').value = '';
         document.getElementById('char-count').innerText = '0/500';
-        
         document.getElementById('review-success').innerText = 'Opinia dodana pomyślnie!';
         document.getElementById('review-success').style.display = 'block';
         setTimeout(()=>{ document.getElementById('review-success').style.display='none'; }, 3000);
-        
-        loadReviews();
     }
 
-    /* ADMIN PANEL OPERATIONS */
+    /* ADMIN ACTION HANDLING */
     function showReplyForm(id){
         const box = document.getElementById(`reply-box-${id}`);
         box.style.display = (box.style.display === 'none') ? 'block' : 'none';
@@ -1649,53 +1012,59 @@
 
     function submitReply(reviewId){
         const text = document.getElementById(`reply-text-${reviewId}`).value;
-        if(!text.trim()){
-            alert('Wpisz treść odpowiedzi!');
-            return;
-        }
+        if(!text.trim()) return;
 
-        let reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
-        const review = reviews.find(r => r.id === reviewId);
-        if(review){
-            if(!review.replies) review.replies = [];
-            review.replies.push({
+        if(isFirebaseConfigured) {
+            firebase.database().ref(`reviews/${reviewId}/replies`).push({
                 author: 'Clearnix Creator',
                 avatar: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff006e"%3E%3Cpath d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/%3E%3C/svg%3E',
                 text: text,
                 date: new Date().toLocaleDateString('pl-PL', {year:'numeric', month:'long', day:'numeric'})
             });
-            localStorage.setItem('reviews', JSON.stringify(reviews));
+        } else {
+            let reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
+            const review = reviews.find(r => r.id === reviewId);
+            if(review){
+                if(!review.replies) review.replies = [];
+                review.replies.push({
+                    author: 'Clearnix Creator',
+                    text: text,
+                    date: new Date().toLocaleDateString('pl-PL', {year:'numeric', month:'long', day:'numeric'})
+                });
+                localStorage.setItem('reviews', JSON.stringify(reviews));
+            }
+            loadReviews();
         }
-        loadReviews();
     }
 
     function deleteReview(id){
         if(!confirm('Czy na pewno chcesz usunąć tę opinię?')) return;
-        let reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
-        reviews = reviews.filter(r => r.id !== id);
-        localStorage.setItem('reviews', JSON.stringify(reviews));
-        loadReviews();
+        if(isFirebaseConfigured) {
+            firebase.database().ref(`reviews/${id}`).remove();
+        } else {
+            let reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
+            reviews = reviews.filter(r => r.id !== id);
+            localStorage.setItem('reviews', JSON.stringify(reviews));
+            loadReviews();
+        }
     }
 
     function exportReviews(){
         let reviews = localStorage.getItem('reviews') || '[]';
         let blob = new Blob([reviews], {type: "application/json"});
         let url = URL.createObjectURL(blob);
-        let a = document.createElement('a');
-        a.href = url;
-        a.download = 'clearnix-reviews-export.json';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+        let a = document.createElement('a'); a.href = url; a.download = 'clearnix-reviews-export.json';
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
     }
 
-    /* DOWNLOAD DISPATCHER */
+    /* DOWNLOAD DETECTOR */
     function triggerDownload(){
-        document.getElementById('download-status').innerText = 'Inicjalizacja bezpiecznego pobierania...';
+        document.getElementById('download-status').innerText = 'Inicjalizacja pobierania...';
         setTimeout(()=>{
             document.getElementById('download-status').innerText = 'Pobieranie rozpoczęte!';
+            // TUTAJ wklej swój link z sekcji GitHub Releases:
             window.location.href = 'https://clearnixapp.github.io/clearnix/Clearnix-Setup.exe';
-        }, 1500);
+        }, 1200);
     }
 
     /* MULTILANGUAGE ROUTING SYSTEM */
@@ -1715,13 +1084,16 @@
         document.getElementById("add-review-btn").innerText=t['add-review'];
         document.getElementById("nav-home").innerText=t['nav-home'];
         document.getElementById("nav-reviews").innerText=t['nav-reviews'];
+        document.getElementById("nav-security").innerText=t['nav-security'];
         document.getElementById("back-btn").innerText=t['back-home'];
+        document.getElementById("security-back-btn").innerText=t['back-home'];
         document.getElementById("reviews-back-btn").innerText=t['back-home'];
         
         document.getElementById("login-title").innerText=t['login-title'];
         document.getElementById("login-email-label").innerText=t['login-email-label'];
         document.getElementById("login-password-label").innerText=t['login-password-label'];
         document.getElementById("login-btn").innerText=t['login-btn'];
+        document.getElementById("google-login-btn").innerText=t['google-login-btn'];
         document.getElementById("no-account-text").innerText=t['no-account-text'];
         document.getElementById("switch-to-register").innerText=t['switch-to-register'];
         
@@ -1743,16 +1115,19 @@
         document.getElementById("logout-btn").innerText=t['logout-btn'];
         document.getElementById("login-prompt-title").innerText=t['login-prompt-title'];
         document.getElementById("open-login-btn").innerText=t['open-login-btn'];
+
+        document.getElementById("security-title").innerText=t['sec-title'];
+        document.getElementById("security-desc").innerText=t['sec-desc'];
+        document.getElementById("security-p1").innerHTML=t['sec-p1'];
+        document.getElementById("security-p2").innerHTML=t['sec-p2'];
     }
 
     /* CORE STARTER INIT */
     window.addEventListener('load', ()=>{
         initializeFirebase();
-        initializeGoogleAuth();
         loadReviews();
         updateUserProfile();
         
-        // Licznik znaków
         const opinionField=document.getElementById('opinion');
         if(opinionField){
             opinionField.addEventListener('input', function(){
@@ -1760,12 +1135,9 @@
             });
         }
         
-        // Zamykanie modal okna kliknięciem poza nim
         window.onclick=function(event){
             const modal=document.getElementById('auth-modal');
-            if(event.target===modal){
-                closeAuthModal();
-            }
+            if(event.target===modal){ closeAuthModal(); }
         }
     });
     </script>
